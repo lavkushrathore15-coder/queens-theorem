@@ -5,14 +5,12 @@ def is_safe(board, row, col):
     for i in range(row):
         if board[i] == col:
             return False
-
+            
     # Check diagonals
     for i in range(row):
         if abs(board[i] - col) == abs(i - row):
             return False
-
     return True
-
 
 def solve_queens(board, row):
     if row == N:
@@ -25,9 +23,7 @@ def solve_queens(board, row):
             if solve_queens(board, row + 1):
                 return True
             board[row] = -1  # Backtrack
-
     return False
-
 
 def print_board(board):
     for i in range(N):
@@ -37,7 +33,6 @@ def print_board(board):
             else:
                 print(".", end=" ")
         print()
-
 
 board = [-1] * N
 solve_queens(board, 0)
